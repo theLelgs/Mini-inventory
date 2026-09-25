@@ -30,6 +30,17 @@ Character player = new()
 while (true)
 {
     player.Backpack.Display();
-    Console.ReadLine();
+    Console.WriteLine("Do you want to pick up a helmet?");
+    Armor Helmet = new()
+    {
+        Protection = 0.45f,
+        Name="Iron Helmet",
+        Weight = 1.3f
+    };
+    string input = Console.ReadLine().ToLower();
+    if (input == "yes" || input == "y")
+    {
+        player.Backpack.Items.Add(Helmet);
+    }
 }
 
